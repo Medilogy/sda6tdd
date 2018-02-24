@@ -41,6 +41,11 @@ public class CalcServiceSteps {
         text = "3a;2;4;5b";
     }
 
+    @And("^I pass recipe$")
+    public void I_pass_recipe() {
+        text = " 2 jablka; 3 jajka; 5 ziemniakow";
+    }
+
     @When("^I execute calculate method$")
     public void I_execute_calculate_method() {
         actual = calcService.calculate(text);
@@ -60,5 +65,10 @@ public class CalcServiceSteps {
     @Then("^I get result for text with letters$")
     public void I_get_result_for_text_with_letters(){
         Assert.assertEquals(14, actual);
+    }
+
+    @Then("^I get result for recipe$")
+    public void I_get_result_for_recipe() {
+        Assert.assertEquals(10, actual);
     }
 }
