@@ -43,6 +43,7 @@ public class WriterTest {
 
         Assert.assertEquals("Hello, my friend!", result);
     }
+
     @Test
     public void sayHelloWithCapitalizedName() {
     //    Writer writer = new Writer();
@@ -51,5 +52,24 @@ public class WriterTest {
         String result = writer.sayHello(name);
 
         Assert.assertEquals("HELLO, MICHAL!" , result);
+    }
+
+    @Test
+    public void sayHelloWithOneSpaceBar() {
+
+        String name = " ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
+    }
+    @Test
+    public void sayHelloWithFourSpaceBars() {
+
+        String name = "    ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
     }
 }
