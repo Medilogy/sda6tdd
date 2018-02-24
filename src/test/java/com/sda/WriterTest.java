@@ -82,7 +82,7 @@ public class WriterTest {
 
         Assert.assertEquals("Hello, Michal, Agata, Alicja, Igor and Barbara!", result);
     }
-    
+
     @Test
     public void sayHelloWithMultipleCapitalizedNames() {
 
