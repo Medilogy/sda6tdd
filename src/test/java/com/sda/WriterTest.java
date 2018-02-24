@@ -1,6 +1,5 @@
 package com.sda;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -82,5 +81,15 @@ public class WriterTest {
         String result = writer.sayHello(name);
 
         Assert.assertEquals("Hello, Michal, Agata, Alicja, Igor and Barbara!", result);
+    }
+    
+    @Test
+    public void sayHelloWithMultipleCapitalizedNames() {
+
+        String name = "MICHAL,AGATA,ALICJA";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("HELLO, MICHAL, AGATA AND ALICJA!", result);
     }
 }
