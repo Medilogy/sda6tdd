@@ -6,14 +6,20 @@ Feature: CalcService
     When I execute calculate method
     Then I get correct result
 
-    Scenario: Should return 0 when text is passed
-      Given I initialize CalcService
-      And I pass null text value
-      When I execute calculate method
-      Then I get 0 as a result
+  Scenario: Should return 0 when text is passed
+    Given I initialize CalcService
+    And I pass null text value
+    When I execute calculate method
+    Then I get 0 as a result
 
-      Scenario: Should return 0 when blank text is passed
-        Given I initialize CalcService
-        And I pass blank text value
-        When I execute calculate method
-        Then I get 0 as a result
+  Scenario: Should return 0 when blank text is passed
+    Given I initialize CalcService
+    And I pass blank text value
+    When I execute calculate method
+    Then I get 0 as a result
+
+  Scenario: Should return correct value when mixed letters text is passed
+    Given I initialize CalcService
+    And I pass text with letters
+    When I execute calculate method
+    Then I get result for text with letters
