@@ -16,17 +16,17 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithGivenNameTest() {
-    //    Writer writer = new Writer();
+        //    Writer writer = new Writer();
         String name = "Michal";
 
         String result = writer.sayHello(name);
 
-        Assert.assertEquals("Expected hello message is invalid","Hello, Michal!", result);
+        Assert.assertEquals("Expected hello message is invalid", "Hello, Michal!", result);
     }
 
     @Test
     public void sayHelloWithNoNameSpecified() {
-    //    Writer writer = new Writer();
+        //    Writer writer = new Writer();
         String name = " ";
 
         String result = writer.sayHello("");
@@ -36,7 +36,7 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithNullName() {
-    //    Writer writer = new Writer();
+        //    Writer writer = new Writer();
         String name = null;
 
         String result = writer.sayHello(name);
@@ -46,12 +46,12 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithCapitalizedName() {
-    //    Writer writer = new Writer();
+        //    Writer writer = new Writer();
         String name = "MICHAL";
 
         String result = writer.sayHello(name);
 
-        Assert.assertEquals("HELLO, MICHAL!" , result);
+        Assert.assertEquals("HELLO, MICHAL!", result);
     }
 
     @Test
@@ -63,6 +63,7 @@ public class WriterTest {
 
         Assert.assertEquals("Hello, my friend!", result);
     }
+
     @Test
     public void sayHelloWithFourSpaceBars() {
 
@@ -71,5 +72,15 @@ public class WriterTest {
         String result = writer.sayHello(name);
 
         Assert.assertEquals("Hello, my friend!", result);
+    }
+
+    @Test
+    public void sayHelloWithMultipleNames() {
+
+        String name = "Michal,Agata,Alicja,Igor,Barbara";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, Michal, Agata, Alicja, Igor and Barbara!", result);
     }
 }
