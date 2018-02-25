@@ -7,13 +7,21 @@ public class Bank {
     private static int idCounter = 0;
     private String name;
     private UserService userService;
-    private List<Account> accounts;
+    private AccountService accountService;
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     public String getName() {
         return name;
     }
 
-    public int getNumberOfUsers(){
+    public int getNumberOfUsers() {
         return userService.getNumberOfUsers();
     }
 
@@ -21,19 +29,31 @@ public class Bank {
         return userService;
     }
 
-
-    public List<Account> getAccounts() {
-        return accounts;
-    }
-
     public Bank(String name) {
         this.name = name;
         this.userService = new UserService();
-        this.accounts = new ArrayList<>();
+        this.accountService = new AccountService();
 
+    }
+
+    public int getNumberOfAccounts() {
+        return accountService.getNumberOfAccounts();
     }
 
     public boolean addUser(User user) {
         return userService.addUser(user);
+    }
+
+    public boolean createAccount(int userId, Account account) {
+        boolean result = false;
+        if (userService.isUserPresent(userId)) {
+            result = accountService.addAccount(account);
+
+        }
+        return result;
+    }
+
+    public AccountService getAccountService() {
+        return accountService;
     }
 }

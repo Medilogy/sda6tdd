@@ -1,6 +1,15 @@
 package com.sda.bank;
 
 public class Account {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private int userId;
     private int amount;
 
@@ -25,7 +34,7 @@ public class Account {
         this.amount = amount;
     }
 
-    public Account(){
+    public Account() {
 
     }
 }
