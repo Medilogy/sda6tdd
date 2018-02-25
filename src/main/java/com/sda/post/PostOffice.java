@@ -2,15 +2,15 @@ package com.sda.post;
 
 public class PostOffice {
 
-    private SenderService sendService;
+    private SenderService senderService;
 
     private UserStorage userStorage;
 
     public PostOffice() {
     }
 
-    public PostOffice(SenderService sendService, UserStorage userStorage) {
-        this.sendService = sendService;
+    public PostOffice(SenderService senderService, UserStorage userStorage) {
+        this.senderService = senderService;
         this.userStorage = userStorage;
     }
 
@@ -18,12 +18,16 @@ public class PostOffice {
         return userStorage.createNewUser(nickname);
     }
 
-    public SenderService getSendService() {
-        return sendService;
+    public boolean sendNewMessage(String from, String to, String message) {
+        return senderService.sendMessage(from, to, message);
     }
 
-    public void setSendService(SenderService sendService) {
-        this.sendService = sendService;
+    public SenderService getSenderService() {
+        return senderService;
+    }
+
+    public void setSenderService(SenderService senderService) {
+        this.senderService = senderService;
     }
 
     public UserStorage getUserStorage() {
