@@ -6,6 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en_scouse.An;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 
 public class CalcServiceSteps {
@@ -43,7 +44,12 @@ public class CalcServiceSteps {
 
     @And("^I pass recipe$")
     public void I_pass_recipe() {
-        text = " 2 jablka; 3 jajka; 5 ziemniakow";
+        text = "2 jablka; 3 jajka; 5 ziemniakow";
+    }
+
+    @And("^I pass (.*) value$")
+    public void I_pass_text_value (String text){
+        this.text = text;
     }
 
     @When("^I execute calculate method$")

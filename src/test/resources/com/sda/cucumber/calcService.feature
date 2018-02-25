@@ -29,3 +29,9 @@ Feature: CalcService
     And I pass recipe
     When I execute calculate method
     Then I get result for recipe
+
+    Scenario: Test
+      Given I initialize CalcService
+      And I pass 5 value
+      When I execute calculate method
+      Then I get result for recipe
